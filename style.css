@@ -1,0 +1,134 @@
+body{
+    background-color: black;
+}
+#MyPhoto{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid red;
+}
+li{
+    transition: 1.5s;
+}
+li:hover{
+    background-color: aqua;
+    transition: 1s;
+}
+#name{
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+.html{
+    font-family: 'Mochiy Pop One', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    background-color: #FA5720;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0 30px;
+}
+.css{
+    font-family: 'Mochiy Pop One', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    background-color: #2297EE;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 30px;
+}
+.js{
+    font-family: 'Mochiy Pop One', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: #F7E01E;
+    border-radius: 5px;
+    padding: 0 30px;
+}
+.butn{
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+.tex{
+    width: 100%;
+    padding: 20px;
+    height: 40vh;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #1D1E22;
+    border: none;
+    resize: none;
+    font-size: small;
+    border: 1px solid rgba(255, 0, 0, 0.545);
+}
+iframe{
+    width: 100%;
+    min-height: 42vh;
+    background-color: #1D1E22;
+    border: 1px solid rgba(255, 0, 0, 0.545);
+    border-radius: 10px;
+    }
+#fullscreen-toggle{
+    position: absolute;
+    right: 0.2%;
+    top: 1%;
+    background: none;
+    color: #fff;
+    }
+.cpy{
+    font-size: 10px;
+}
+.texhtml{
+    width: 99%;
+    outline: none;
+    height: 68vh;
+    border: none;
+    resize: none;
+}
+.codecard{
+    width: 450px;
+    height: 200px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: 1s;
+}
+.codecard:hover{
+    background-color: rgba(0, 255, 255, 0.692);
+    color: black;
+    transition: 1s;
+}
+.add{
+    width: 270px;
+    display: flex;
+    align-items: center;
+}
+.nameAdd{
+    background: none;
+    outline: none;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+}
+::-webkit-scrollbar{
+    width: 7px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background: linear-gradient(135deg, hsla(0, 90%, 51%, 1) 0%, hsla(160, 54%, 44%, 1) 49%, hsla(249, 100%, 48%, 1) 100%);
+}

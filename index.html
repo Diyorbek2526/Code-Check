@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code-check</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex gap-2 align-items-center">
+          <div class="dropdown">
+            <img
+              src="./img/photo_2023-02-07_14-21-59.jpg"
+              alt="MyPhoto"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              id="MyPhoto"
+            />
+            <ul class="dropdown-menu p-0 overflow-hidden">
+              <li class="p-2">
+                <a
+                  class="butn text-decoration-none text-black"
+                  href="https://t.me/Frontend_officiaI"
+                  target="_blank"
+                  ><i class="fa-brands fa-telegram text-info fs-4 me-2"></i>
+                  Telegram</a
+                >
+              </li>
+              <li class="p-2">
+                <a
+                  class="butn text-decoration-none text-black"
+                  href="https://www.instagram.com/diko_web_developer/"
+                  target="_blank"
+                  ><i class="fa-brands fa-instagram text-danger fs-4 me-2"></i>
+                  Instagram</a
+                >
+              </li>
+              <li class="p-2">
+                <a
+                  class="butn text-decoration-none text-black"
+                  href="https://github.com/Diyorbek2526"
+                  target="_blank"
+                  ><i class="fa-brands fa-github fs-4 me-2"></i> GitHub</a
+                >
+              </li>
+              <li class="p-2">
+                <a
+                  class="butn text-decoration-none text-black"
+                  href="https://www.linkedin.com/in/diyorbek-tursunov/"
+                  target="_blank"
+                  ><i class="fa-brands fa-linkedin text-primary fs-4 me-2"></i>
+                  Linkedin</a
+                >
+              </li>
+            </ul>
+          </div>
+          <h1 class="fw-bold text-white m-0" id="name">Code - check</h1>
+        </div>
+        <div>
+          <button
+            class="btn btn-info butn text-white"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            onclick="seeCode()"
+          >
+            <i class="fa-solid fa-eye"></i> View Code
+          </button>
+          <button class="btn btn-danger butn" onclick="clr()">
+            <i class="fa-solid fa-trash"></i> CLEAR
+          </button>
+          <button class="btn btn-success butn" onclick="run()">
+            <i class="fa-solid fa-play"></i> RUN
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="d-none" id="allMenu">
+      <div class="container-fluid" id="content">
+        <div class="d-flex text-white fw-bold align-items-center gap-3 my-2">
+          <button class="btn btn-secondary" id="backMenu">
+            <i class="fa-sharp fa-solid fa-left-long"></i>
+          </button>
+          <p class="m-0" id="codName"></p>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6 col-xl-4">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="html d-flex align-items-center gap-1">
+                <i class="fa-brands fa-html5 fs-6"></i> HTML
+              </div>
+              <button class="butn btn btn-warning cpy" onclick="htmlCopy()">
+                Copy
+              </button>
+            </div>
+            <textarea class="w-100 tex" id="tex"></textarea>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="css d-flex align-items-center gap-1">
+                <i class="fa-brands fa-css3-alt fs-6"></i> CSS
+              </div>
+              <button class="butn btn btn-warning cpy" onclick="cssCopy()">
+                Copy
+              </button>
+            </div>
+            <textarea class="w-100 tex" id="tex2"></textarea>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="js d-flex align-items-center gap-1">
+                <i class="fa-brands fa-square-js"></i> JS
+              </div>
+              <button class="butn btn btn-warning cpy" onclick="jsCopy()">
+                Copy
+              </button>
+            </div>
+            <textarea class="w-100 tex" id="tex3"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div id="fullscreen-element" class="position-relative">
+        <button id="fullscreen-toggle" class="btn border">
+          <i class="fa-solid fa-expand"></i>
+        </button>
+        <iframe class="h-100" id="editorPreview"></iframe>
+      </div>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content overflow-hidden">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 fw-bold butn" id="exampleModalLabel">
+                View Code
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body" id="seeCode"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary butn" id="download">
+                Download
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section
+      class="d-flex mt-4 gap-4 align-items-start flex-wrap"
+      id="menu"
+    ></section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
